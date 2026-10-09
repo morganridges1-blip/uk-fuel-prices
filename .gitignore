@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+
+# Raw data feeds cache (downloaded dynamically)
+data/raw/
+
+# System / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

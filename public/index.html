@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="Live UK Petrol and Diesel Prices on an interactive map using official UK Government Fuel Finder open data.">
+  <meta name="theme-color" content="#0f172a">
+  <title>UK Fuel Price Tracker | Live Open Data</title>
+
+  <!-- Leaflet & MarkerCluster CSS (Vendored locally) -->
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="vendor/MarkerCluster.css">
+  <link rel="stylesheet" href="vendor/MarkerCluster.Default.css">
+
+  <!-- Application Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header Navigation -->
+    <header class="app-header">
+      <div class="header-top">
+        <div class="brand-title">
+          <svg class="pump-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 22h12"></path>
+            <path d="M4 9h10"></path>
+            <path d="M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18"></path>
+            <path d="M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5"></path>
+          </svg>
+          <div>
+            <h1>UK Fuel Prices</h1>
+            <span class="refresh-badge" id="refresh-time">Loading prices...</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button id="btn-near-me" class="action-btn" title="Center map on my location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+            <span class="btn-label">Near Me</span>
+          </button>
+
+          <button id="btn-filter" class="action-btn" title="Open filters">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="4" y1="21" x2="4" y2="14"></line>
+              <line x1="4" y1="10" x2="4" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="3"></line>
+              <line x1="20" y1="21" x2="20" y2="16"></line>
+              <line x1="20" y1="12" x2="20" y2="3"></line>
+              <line x1="1" y1="14" x2="7" y2="14"></line>
+              <line x1="9" y1="8" x2="15" y2="8"></line>
+              <line x1="17" y1="16" x2="23" y2="16"></line>
+            </svg>
+            <span class="btn-label">Filter</span>
+            <span id="filter-badge" class="badge-count" style="display:none">0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Fuel Type Selector -->
+      <div class="fuel-selector-wrap">
+        <div class="fuel-selector" role="radiogroup" aria-label="Select fuel type">
+          <button class="fuel-pill active" data-fuel="e10" role="radio" aria-checked="true">
+            <span class="fuel-code">E10</span>
+            <span class="fuel-name">Petrol</span>
+          </button>
+          <button class="fuel-pill" data-fuel="b7" role="radio" aria-checked="false">
+            <span class="fuel-code">B7</span>
+            <span class="fuel-name">Diesel</span>
+          </button>
+          <button class="fuel-pill" data-fuel="e5" role="radio" aria-checked="false">
+            <span class="fuel-code">E5</span>
+            <span class="fuel-name">Super</span>
+          </button>
+          <button class="fuel-pill" data-fuel="b7_prem" role="radio" aria-checked="false">
+            <span class="fuel-code">Prem</span>
+            <span class="fuel-name">Diesel</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Sub-Bar (Region & Price Stats) -->
+      <div class="stats-ribbon">
+        <div class="ribbon-left">
+          <button id="btn-region-scope" class="region-toggle-btn" title="Switch focus between Kent/SE and All UK">
+            <span id="region-scope-label">Kent & South East</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="chevron-icon">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <span id="station-count-label" class="muted-label">Searching...</span>
+        </div>
+        <div class="ribbon-stats" id="viewport-price-stats">
+          <span class="stat-chip green" id="stat-min">Min: --p</span>
+          <span class="stat-chip yellow" id="stat-avg">Avg: --p</span>
+          <span class="stat-chip red" id="stat-max">Max: --p</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Map Container -->
+    <main id="map-container">
+      <div id="map"></div>
+
+      <!-- Dynamic Price Legend Overlay -->
+      <div class="map-legend" id="map-legend">
+        <div class="legend-item"><span class="legend-dot cheap"></span> Cheapest 25%</div>
+        <div class="legend-item"><span class="legend-dot avg"></span> Mid range</div>
+        <div class="legend-item"><span class="legend-dot expensive"></span> Highest 25%</div>
+      </div>
+
+      <!-- Loading Spinner Overlay -->
+      <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p id="loading-text">Loading official UK fuel prices...</p>
+      </div>
+    </main>
+
+    <!-- Station Details Bottom Sheet / Modal -->
+    <div id="station-sheet" class="station-sheet" aria-hidden="true">
+      <div class="sheet-handle" id="sheet-drag-handle">
+        <span class="handle-bar"></span>
+      </div>
+      <div class="sheet-content">
+        <div class="sheet-header">
+          <div class="sheet-brand-row">
+            <span id="sheet-brand" class="station-brand-pill">Brand</span>
+            <span id="sheet-stale-tag" class="stale-warning-tag" style="display:none">⚠️ Price >7 days old</span>
+            <button id="btn-close-sheet" class="close-btn" aria-label="Close station details">&times;</button>
+          </div>
+          <h2 id="sheet-title">Station Name</h2>
+          <p id="sheet-address" class="sheet-address">Full Address</p>
+          <p id="sheet-distance" class="sheet-distance" style="display:none">📍 2.3 miles away</p>
+        </div>
+
+        <div class="sheet-prices-grid">
+          <div class="price-box" id="box-e10">
+            <span class="pb-name">E10 Unleaded</span>
+            <span class="pb-price" id="price-val-e10">--</span>
+          </div>
+          <div class="price-box" id="box-b7">
+            <span class="pb-name">B7 Diesel</span>
+            <span class="pb-price" id="price-val-b7">--</span>
+          </div>
+          <div class="price-box" id="box-e5">
+            <span class="pb-name">E5 Super Unleaded</span>
+            <span class="pb-price" id="price-val-e5">--</span>
+          </div>
+          <div class="price-box" id="box-b7-prem">
+            <span class="pb-name">Premium Diesel</span>
+            <span class="pb-price" id="price-val-b7-prem">--</span>
+          </div>
+        </div>
+
+        <div class="sheet-meta">
+          <div class="meta-row">
+            <span class="meta-label">Last updated:</span>
+            <span class="meta-val" id="sheet-updated-time">--</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label">Data source:</span>
+            <span class="meta-val" id="sheet-source">UK Fuel Finder (GOV.UK)</span>
+          </div>
+        </div>
+
+        <div class="sheet-actions">
+          <a id="btn-directions" href="#" target="_blank" rel="noopener noreferrer" class="directions-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+            <span>Get Directions</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Modal / Drawer -->
+    <div id="filter-modal" class="filter-modal" aria-hidden="true">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-panel">
+        <div class="modal-header">
+          <h2>Filter Fuel Stations</h2>
+          <button id="btn-close-filter" class="close-btn" aria-label="Close filters">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Postcode / City Search -->
+          <div class="filter-group">
+            <label for="search-input" class="filter-label">Search Postcode or Area</label>
+            <div class="search-input-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="search-icon">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="search-input" placeholder="e.g. ME14, Canterbury, Maidstone...">
+              <button id="btn-clear-search" class="clear-search-btn" style="display:none">&times;</button>
+            </div>
+          </div>
+
+          <!-- Max Price Slider -->
+          <div class="filter-group">
+            <div class="slider-header">
+              <label for="price-slider" class="filter-label">Max Price Limit</label>
+              <span id="price-slider-val" class="slider-badge">Any Price</span>
+            </div>
+            <input type="range" id="price-slider" min="120" max="210" step="1" value="210">
+            <div class="slider-marks">
+              <span>120p</span>
+              <span>165p</span>
+              <span>210p+</span>
+            </div>
+          </div>
+
+          <!-- Brand Filter Chips -->
+          <div class="filter-group">
+            <div class="brand-group-header">
+              <label class="filter-label">Retailer Brands</label>
+              <button id="btn-select-all-brands" class="text-link-btn">Select All</button>
+            </div>
+            <div class="brand-chips" id="brand-chips-container">
+              <!-- Dynamically populated brands -->
+            </div>
+          </div>
+
+          <!-- Stale Price Toggle -->
+          <div class="filter-group">
+            <label class="toggle-control">
+              <input type="checkbox" id="toggle-hide-stale" checked>
+              <span class="toggle-slider"></span>
+              <span class="toggle-text">Hide stale prices (>7 days old)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button id="btn-reset-filters" class="secondary-btn">Reset Filters</button>
+          <button id="btn-apply-filters" class="primary-btn">Apply Filters</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Attribution -->
+    <footer class="app-footer">
+      <p>
+        Data sourced from the <strong>UK Government Fuel Finder Scheme</strong> (DESNZ / CMA) under the
+        <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank" rel="noopener noreferrer">Open Government Licence v3.0</a>
+        and direct retailer feeds. Pump prices are legally reported within 30 minutes of forecourt changes.
+      </p>
+      <p>
+        Map tiles &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors.
+      </p>
+    </footer>
+  </div>
+
+  <!-- Leaflet & MarkerCluster JS (Vendored locally) -->
+  <script src="vendor/leaflet.js"></script>
+  <script src="vendor/leaflet.markercluster.js"></script>
+
+  <!-- Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>

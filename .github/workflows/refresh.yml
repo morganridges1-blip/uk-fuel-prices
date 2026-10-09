@@ -1,0 +1,90 @@
+name: Refresh UK Fuel Prices & Publish
+
+on:
+  schedule:
+    # Auto-refresh daily at 4:00 AM UK time
+    # (03:00 UTC during British Summer Time BST / 04:00 UTC during Greenwich Mean Time GMT)
+    - cron: '0 3,4 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+  push:
+    branches:
+      - main
+    paths:
+      - 'public/**'
+      - 'src/**'
+      - 'refresh.py'
+
+# Grant GITHUB_TOKEN permissions to deploy to GitHub Pages and commit fresh data
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages-deploy'
+  cancel-in-progress: false
+
+jobs:
+  refresh-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch live fuel data and normalise
+        run: |
+          python refresh.py
+
+      - name: Validate generated dataset safety
+        run: |
+          python -c "
+          import json, os, sys
+          path = 'public/data/prices.json'
+          if not os.path.exists(path):
+              print('CRITICAL: prices.json not found!')
+              sys.exit(1)
+          size_mb = os.path.getsize(path) / (1024 * 1024)
+          print(f'Dataset size: {size_mb:.2f} MB')
+          with open(path, 'r', encoding='utf-8') as f:
+              data = json.load(f)
+          stations = data.get('stations', [])
+          count = len(stations)
+          print(f'Validated station count: {count}')
+          if count < 500:
+              print(f'CRITICAL: insufficient stations ({count} < 500)!')
+              sys.exit(1)
+          print('Safety check passed. Proceeding with deployment.')
+          "
+
+      - name: Commit updated data back to repository
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/data/prices.json public/data/prices-southeast.json public/data/summary.json
+          if git diff --staged --quiet; then
+            echo "No price changes detected since last refresh."
+          else
+            git commit -m "chore(data): refresh UK fuel prices [skip ci]"
+            git push origin main
+          fi
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'public'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
