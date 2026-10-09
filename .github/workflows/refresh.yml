@@ -13,6 +13,8 @@ on:
       - 'public/**'
       - 'src/**'
       - 'refresh.py'
+      - '.github/workflows/**'
+      - 'index.html'
 
 # Grant GITHUB_TOKEN permissions to deploy to GitHub Pages and commit fresh data
 permissions:
