@@ -1,8 +1,8 @@
 {
-  "refreshed_at": "2026-10-10T03:15:12.833915+00:00",
-  "duration_seconds": 10.54,
+  "refreshed_at": "2026-10-10T04:15:39.424154+00:00",
+  "duration_seconds": 10.59,
   "stats": {
-    "generated_at": "2026-10-10T03:15:12Z",
+    "generated_at": "2026-10-10T04:15:39Z",
     "total_raw_records": 2080,
     "total_stations": 2059,
     "e10_count": 2042,
@@ -43,7 +43,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.43
+      "duration_sec": 0.44
     },
     {
       "name": "applegreen",
@@ -56,7 +56,7 @@
       "status_code": 200,
       "bytes_fetched": 13175,
       "error": null,
-      "duration_sec": 0.78
+      "duration_sec": 0.74
     },
     {
       "name": "asda",
@@ -69,7 +69,7 @@
       "status_code": 200,
       "bytes_fetched": 175590,
       "error": null,
-      "duration_sec": 0.22
+      "duration_sec": 0.37
     },
     {
       "name": "bp",
@@ -95,7 +95,7 @@
       "status_code": 200,
       "bytes_fetched": 290890,
       "error": null,
-      "duration_sec": 0.96
+      "duration_sec": 1.14
     },
     {
       "name": "morrisons",
@@ -108,7 +108,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.11
+      "duration_sec": 0.12
     },
     {
       "name": "sainsburys",
@@ -121,7 +121,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -3] Temporary failure in name resolution",
-      "duration_sec": 10.04
+      "duration_sec": 10.02
     },
     {
       "name": "shell",
@@ -134,7 +134,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.62
+      "duration_sec": 0.48
     },
     {
       "name": "tesco",
@@ -147,7 +147,7 @@
       "status_code": 200,
       "bytes_fetched": 119035,
       "error": null,
-      "duration_sec": 0.36
+      "duration_sec": 0.8
     }
   ],
   "rejected_price_count": 22,
