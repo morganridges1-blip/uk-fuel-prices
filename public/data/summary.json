@@ -1,8 +1,8 @@
 {
-  "refreshed_at": "2026-10-19T04:30:58.984583+00:00",
-  "duration_seconds": 10.52,
+  "refreshed_at": "2026-10-20T03:27:18.451527+00:00",
+  "duration_seconds": 10.53,
   "stats": {
-    "generated_at": "2026-10-19T04:30:58Z",
+    "generated_at": "2026-10-20T03:27:18Z",
     "total_raw_records": 2080,
     "total_stations": 2059,
     "e10_count": 2042,
@@ -20,9 +20,9 @@
       "BP": 173,
       "Applegreen": 64,
       "Jet": 55,
-      "Valero": 53,
+      "Valero": 55,
       "Shell": 24,
-      "Texaco": 20,
+      "Texaco": 18,
       "Murco": 2
     },
     "sources": {
@@ -43,7 +43,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.36
+      "duration_sec": 0.46
     },
     {
       "name": "applegreen",
@@ -56,7 +56,7 @@
       "status_code": 200,
       "bytes_fetched": 13175,
       "error": null,
-      "duration_sec": 0.84
+      "duration_sec": 0.78
     },
     {
       "name": "asda",
@@ -69,7 +69,7 @@
       "status_code": 200,
       "bytes_fetched": 175590,
       "error": null,
-      "duration_sec": 0.37
+      "duration_sec": 0.32
     },
     {
       "name": "bp",
@@ -82,7 +82,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.42
+      "duration_sec": 0.27
     },
     {
       "name": "mfg",
@@ -95,7 +95,7 @@
       "status_code": 200,
       "bytes_fetched": 290890,
       "error": null,
-      "duration_sec": 1.32
+      "duration_sec": 1.14
     },
     {
       "name": "morrisons",
@@ -108,7 +108,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.09
+      "duration_sec": 0.08
     },
     {
       "name": "sainsburys",
@@ -134,7 +134,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.54
+      "duration_sec": 0.48
     },
     {
       "name": "tesco",
@@ -147,7 +147,7 @@
       "status_code": 200,
       "bytes_fetched": 119035,
       "error": null,
-      "duration_sec": 1.16
+      "duration_sec": 0.84
     }
   ],
   "rejected_price_count": 22,
