@@ -1,8 +1,8 @@
 {
-  "refreshed_at": "2026-10-27T03:30:14.433599+00:00",
-  "duration_seconds": 10.89,
+  "refreshed_at": "2026-10-27T04:29:54.005077+00:00",
+  "duration_seconds": 10.41,
   "stats": {
-    "generated_at": "2026-10-27T03:30:14Z",
+    "generated_at": "2026-10-27T04:29:53Z",
     "total_raw_records": 2080,
     "total_stations": 2059,
     "e10_count": 2042,
@@ -43,7 +43,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.59
+      "duration_sec": 0.17
     },
     {
       "name": "applegreen",
@@ -56,7 +56,7 @@
       "status_code": 200,
       "bytes_fetched": 13175,
       "error": null,
-      "duration_sec": 1.25
+      "duration_sec": 0.57
     },
     {
       "name": "asda",
@@ -69,7 +69,7 @@
       "status_code": 200,
       "bytes_fetched": 175590,
       "error": null,
-      "duration_sec": 0.41
+      "duration_sec": 0.14
     },
     {
       "name": "bp",
@@ -82,7 +82,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.49
+      "duration_sec": 0.22
     },
     {
       "name": "mfg",
@@ -95,7 +95,7 @@
       "status_code": 200,
       "bytes_fetched": 290890,
       "error": null,
-      "duration_sec": 1.36
+      "duration_sec": 0.79
     },
     {
       "name": "morrisons",
@@ -108,7 +108,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.07
+      "duration_sec": 0.06
     },
     {
       "name": "sainsburys",
@@ -134,7 +134,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.53
+      "duration_sec": 0.47
     },
     {
       "name": "tesco",
@@ -147,7 +147,7 @@
       "status_code": 200,
       "bytes_fetched": 119035,
       "error": null,
-      "duration_sec": 1.06
+      "duration_sec": 0.72
     }
   ],
   "rejected_price_count": 22,
