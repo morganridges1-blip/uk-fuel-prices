@@ -1,8 +1,8 @@
 {
-  "refreshed_at": "2026-10-29T03:41:24.338502+00:00",
-  "duration_seconds": 6.47,
+  "refreshed_at": "2026-10-29T04:41:58.377039+00:00",
+  "duration_seconds": 10.57,
   "stats": {
-    "generated_at": "2026-10-29T03:41:24Z",
+    "generated_at": "2026-10-29T04:41:58Z",
     "total_raw_records": 855,
     "total_stations": 851,
     "e10_count": 834,
@@ -35,7 +35,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.28
+      "duration_sec": 0.49
     },
     {
       "name": "applegreen",
@@ -48,7 +48,7 @@
       "status_code": 200,
       "bytes_fetched": 13175,
       "error": null,
-      "duration_sec": 0.77
+      "duration_sec": 0.82
     },
     {
       "name": "asda",
@@ -61,7 +61,7 @@
       "status_code": 200,
       "bytes_fetched": 175590,
       "error": null,
-      "duration_sec": 0.13
+      "duration_sec": 0.38
     },
     {
       "name": "bp",
@@ -74,7 +74,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.32
+      "duration_sec": 0.36
     },
     {
       "name": "mfg",
@@ -87,7 +87,7 @@
       "status_code": 200,
       "bytes_fetched": 23166,
       "error": "Invalid JSON payload: Expecting value: line 1 column 1 (char 0)",
-      "duration_sec": 0.85
+      "duration_sec": 1.21
     },
     {
       "name": "morrisons",
@@ -100,7 +100,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.05
+      "duration_sec": 0.08
     },
     {
       "name": "sainsburys",
@@ -113,7 +113,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -3] Temporary failure in name resolution",
-      "duration_sec": 6.11
+      "duration_sec": 10.0
     },
     {
       "name": "shell",
@@ -126,7 +126,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.26
+      "duration_sec": 0.46
     },
     {
       "name": "tesco",
@@ -139,7 +139,7 @@
       "status_code": 200,
       "bytes_fetched": 119035,
       "error": null,
-      "duration_sec": 0.56
+      "duration_sec": 1.02
     }
   ],
   "rejected_price_count": 22,
