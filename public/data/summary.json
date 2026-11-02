@@ -1,14 +1,14 @@
 {
-  "refreshed_at": "2026-11-01T04:45:17.152968+00:00",
-  "duration_seconds": 10.01,
+  "refreshed_at": "2026-11-02T03:49:39.602574+00:00",
+  "duration_seconds": 10.39,
   "stats": {
-    "generated_at": "2026-11-01T04:45:17Z",
+    "generated_at": "2026-11-02T03:49:39Z",
     "total_raw_records": 855,
     "total_stations": 851,
     "e10_count": 834,
-    "e5_count": 471,
+    "e5_count": 472,
     "b7_standard_count": 846,
-    "b7_premium_count": 357,
+    "b7_premium_count": 358,
     "stale_count": 64,
     "rejected_price_count": 22,
     "kent_count": 21,
@@ -35,7 +35,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.27
+      "duration_sec": 0.26
     },
     {
       "name": "applegreen",
@@ -48,7 +48,7 @@
       "status_code": 200,
       "bytes_fetched": 13175,
       "error": null,
-      "duration_sec": 0.19
+      "duration_sec": 0.77
     },
     {
       "name": "asda",
@@ -59,9 +59,9 @@
       "filepath": "data/raw/asda.json",
       "success": true,
       "status_code": 200,
-      "bytes_fetched": 175590,
+      "bytes_fetched": 175615,
       "error": null,
-      "duration_sec": 0.24
+      "duration_sec": 0.18
     },
     {
       "name": "bp",
@@ -74,7 +74,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.28
+      "duration_sec": 0.29
     },
     {
       "name": "mfg",
@@ -100,7 +100,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.1
+      "duration_sec": 0.07
     },
     {
       "name": "sainsburys",
@@ -113,7 +113,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -3] Temporary failure in name resolution",
-      "duration_sec": 9.69
+      "duration_sec": 10.02
     },
     {
       "name": "shell",
@@ -126,7 +126,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.45
+      "duration_sec": 0.28
     },
     {
       "name": "tesco",
@@ -139,7 +139,7 @@
       "status_code": 200,
       "bytes_fetched": 119035,
       "error": null,
-      "duration_sec": 0.86
+      "duration_sec": 1.02
     }
   ],
   "rejected_price_count": 22,
