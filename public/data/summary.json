@@ -1,8 +1,8 @@
 {
-  "refreshed_at": "2026-11-02T03:49:39.602574+00:00",
-  "duration_seconds": 10.39,
+  "refreshed_at": "2026-11-02T04:54:04.593919+00:00",
+  "duration_seconds": 10.36,
   "stats": {
-    "generated_at": "2026-11-02T03:49:39Z",
+    "generated_at": "2026-11-02T04:54:04Z",
     "total_raw_records": 855,
     "total_stations": 851,
     "e10_count": 834,
@@ -35,7 +35,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.26
+      "duration_sec": 0.28
     },
     {
       "name": "applegreen",
@@ -48,7 +48,7 @@
       "status_code": 200,
       "bytes_fetched": 13175,
       "error": null,
-      "duration_sec": 0.77
+      "duration_sec": 0.96
     },
     {
       "name": "asda",
@@ -61,7 +61,7 @@
       "status_code": 200,
       "bytes_fetched": 175615,
       "error": null,
-      "duration_sec": 0.18
+      "duration_sec": 0.25
     },
     {
       "name": "bp",
@@ -87,7 +87,7 @@
       "status_code": 200,
       "bytes_fetched": 23166,
       "error": "Invalid JSON payload: Expecting value: line 1 column 1 (char 0)",
-      "duration_sec": 1.06
+      "duration_sec": 1.34
     },
     {
       "name": "morrisons",
@@ -100,7 +100,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.07
+      "duration_sec": 0.06
     },
     {
       "name": "sainsburys",
@@ -126,7 +126,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.28
+      "duration_sec": 0.4
     },
     {
       "name": "tesco",
@@ -139,7 +139,7 @@
       "status_code": 200,
       "bytes_fetched": 119035,
       "error": null,
-      "duration_sec": 1.02
+      "duration_sec": 0.45
     }
   ],
   "rejected_price_count": 22,
