@@ -1,8 +1,8 @@
 {
-  "refreshed_at": "2026-11-06T03:48:09.378067+00:00",
-  "duration_seconds": 10.72,
+  "refreshed_at": "2026-11-06T04:52:29.428105+00:00",
+  "duration_seconds": 10.58,
   "stats": {
-    "generated_at": "2026-11-06T03:48:09Z",
+    "generated_at": "2026-11-06T04:52:29Z",
     "total_raw_records": 855,
     "total_stations": 851,
     "e10_count": 834,
@@ -35,7 +35,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.53
+      "duration_sec": 0.56
     },
     {
       "name": "applegreen",
@@ -48,7 +48,7 @@
       "status_code": 200,
       "bytes_fetched": 13175,
       "error": null,
-      "duration_sec": 1.03
+      "duration_sec": 0.94
     },
     {
       "name": "asda",
@@ -61,7 +61,7 @@
       "status_code": 200,
       "bytes_fetched": 175615,
       "error": null,
-      "duration_sec": 0.47
+      "duration_sec": 0.39
     },
     {
       "name": "bp",
@@ -74,7 +74,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.34
+      "duration_sec": 0.39
     },
     {
       "name": "mfg",
@@ -87,7 +87,7 @@
       "status_code": 200,
       "bytes_fetched": 23166,
       "error": "Invalid JSON payload: Expecting value: line 1 column 1 (char 0)",
-      "duration_sec": 1.31
+      "duration_sec": 1.3
     },
     {
       "name": "morrisons",
@@ -100,7 +100,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.12
+      "duration_sec": 0.11
     },
     {
       "name": "sainsburys",
@@ -126,7 +126,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.83
+      "duration_sec": 0.55
     },
     {
       "name": "tesco",
@@ -139,7 +139,7 @@
       "status_code": 200,
       "bytes_fetched": 119035,
       "error": null,
-      "duration_sec": 0.95
+      "duration_sec": 0.85
     }
   ],
   "rejected_price_count": 23,
