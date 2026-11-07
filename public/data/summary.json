@@ -1,8 +1,8 @@
 {
-  "refreshed_at": "2026-11-07T03:43:36.864735+00:00",
-  "duration_seconds": 10.18,
+  "refreshed_at": "2026-11-07T04:47:23.722312+00:00",
+  "duration_seconds": 10.29,
   "stats": {
-    "generated_at": "2026-11-07T03:43:36Z",
+    "generated_at": "2026-11-07T04:47:23Z",
     "total_raw_records": 855,
     "total_stations": 851,
     "e10_count": 834,
@@ -35,7 +35,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.28
+      "duration_sec": 0.19
     },
     {
       "name": "applegreen",
@@ -48,7 +48,7 @@
       "status_code": 200,
       "bytes_fetched": 13175,
       "error": null,
-      "duration_sec": 0.7
+      "duration_sec": 1.66
     },
     {
       "name": "asda",
@@ -61,7 +61,7 @@
       "status_code": 200,
       "bytes_fetched": 175615,
       "error": null,
-      "duration_sec": 0.42
+      "duration_sec": 0.17
     },
     {
       "name": "bp",
@@ -87,7 +87,7 @@
       "status_code": 200,
       "bytes_fetched": 23166,
       "error": "Invalid JSON payload: Expecting value: line 1 column 1 (char 0)",
-      "duration_sec": 0.8
+      "duration_sec": 1.05
     },
     {
       "name": "morrisons",
@@ -100,7 +100,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.06
+      "duration_sec": 0.05
     },
     {
       "name": "sainsburys",
@@ -113,7 +113,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -3] Temporary failure in name resolution",
-      "duration_sec": 9.72
+      "duration_sec": 10.01
     },
     {
       "name": "shell",
@@ -126,7 +126,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.49
+      "duration_sec": 0.47
     },
     {
       "name": "tesco",
@@ -139,7 +139,7 @@
       "status_code": 200,
       "bytes_fetched": 119035,
       "error": null,
-      "duration_sec": 0.63
+      "duration_sec": 0.7
     }
   ],
   "rejected_price_count": 23,
