@@ -1,16 +1,16 @@
 {
-  "refreshed_at": "2026-11-20T11:08:10.292373+00:00",
-  "duration_seconds": 10.46,
+  "refreshed_at": "2026-11-21T10:48:29.534790+00:00",
+  "duration_seconds": 1.43,
   "stats": {
-    "generated_at": "2026-11-20T11:08:10Z",
+    "generated_at": "2026-11-21T10:48:29Z",
     "total_raw_records": 855,
     "total_stations": 851,
     "e10_count": 834,
     "e5_count": 472,
     "b7_standard_count": 846,
-    "b7_premium_count": 357,
+    "b7_premium_count": 359,
     "stale_count": 64,
-    "rejected_price_count": 23,
+    "rejected_price_count": 21,
     "kent_count": 21,
     "south_east_count": 110,
     "brand_counts": {
@@ -37,7 +37,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.46
+      "duration_sec": 0.33
     },
     {
       "name": "applegreen",
@@ -50,7 +50,7 @@
       "status_code": 200,
       "bytes_fetched": 13175,
       "error": null,
-      "duration_sec": 0.83
+      "duration_sec": 1.18
     },
     {
       "name": "asda",
@@ -63,7 +63,7 @@
       "status_code": 200,
       "bytes_fetched": 175732,
       "error": null,
-      "duration_sec": 0.28
+      "duration_sec": 0.24
     },
     {
       "name": "bp",
@@ -76,7 +76,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.3
+      "duration_sec": 0.33
     },
     {
       "name": "mfg",
@@ -89,7 +89,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.5
+      "duration_sec": 0.72
     },
     {
       "name": "morrisons",
@@ -102,7 +102,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.07
+      "duration_sec": 0.02
     },
     {
       "name": "sainsburys",
@@ -115,7 +115,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -3] Temporary failure in name resolution",
-      "duration_sec": 10.02
+      "duration_sec": 0.12
     },
     {
       "name": "shell",
@@ -128,7 +128,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.28
+      "duration_sec": 0.43
     },
     {
       "name": "tesco",
@@ -137,14 +137,14 @@
       "format": "json",
       "primary": false,
       "filepath": "data/raw/tesco.json",
-      "success": true,
-      "status_code": 200,
-      "bytes_fetched": 119035,
-      "error": null,
-      "duration_sec": 0.78
+      "success": false,
+      "status_code": 403,
+      "bytes_fetched": 0,
+      "error": "HTTP 403: Forbidden",
+      "duration_sec": 0.18
     }
   ],
-  "rejected_price_count": 23,
+  "rejected_price_count": 21,
   "rejected_prices_sample": [
     {
       "station": "Asda Moorfarm Roundabout",
@@ -203,14 +203,6 @@
       "source": "asda"
     },
     {
-      "station": "Asda 181 Hessle Road",
-      "brand": "Asda",
-      "postcode": "HU3 4AA",
-      "fuel": "Premium Diesel",
-      "price": 999.9,
-      "source": "asda"
-    },
-    {
       "station": "Asda Almondvale",
       "brand": "Asda",
       "postcode": "EH54 6NA",
@@ -222,14 +214,6 @@
       "station": "Asda 108-24 North Esk Road",
       "brand": "Asda",
       "postcode": "DD10 9AY",
-      "fuel": "Premium Diesel",
-      "price": 999.9,
-      "source": "asda"
-    },
-    {
-      "station": "Asda Flemington Industrial Park",
-      "brand": "Asda",
-      "postcode": "ML1 2NT",
       "fuel": "Premium Diesel",
       "price": 999.9,
       "source": "asda"
@@ -304,6 +288,22 @@
       "postcode": "NE37 1EZ",
       "fuel": "Premium Diesel",
       "price": 10.0,
+      "source": "asda"
+    },
+    {
+      "station": "Asda 94 High Street",
+      "brand": "Asda",
+      "postcode": "SN4 7AS",
+      "fuel": "Premium Diesel",
+      "price": 999.9,
+      "source": "asda"
+    },
+    {
+      "station": "Asda Llyswen",
+      "brand": "Asda",
+      "postcode": "LD3 0UR",
+      "fuel": "E5",
+      "price": 999.9,
       "source": "asda"
     }
   ]
