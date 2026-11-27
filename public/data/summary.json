@@ -1,8 +1,8 @@
 {
-  "refreshed_at": "2026-11-26T12:04:35.482781+00:00",
-  "duration_seconds": 10.15,
+  "refreshed_at": "2026-11-27T11:55:00.940780+00:00",
+  "duration_seconds": 10.37,
   "stats": {
-    "generated_at": "2026-11-26T12:04:35Z",
+    "generated_at": "2026-11-27T11:55:00Z",
     "total_raw_records": 790,
     "total_stations": 787,
     "e10_count": 787,
@@ -35,7 +35,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.2
+      "duration_sec": 0.44
     },
     {
       "name": "applegreen",
@@ -48,7 +48,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1018)",
-      "duration_sec": 0.06
+      "duration_sec": 0.18
     },
     {
       "name": "asda",
@@ -59,9 +59,9 @@
       "filepath": "data/raw/asda.json",
       "success": true,
       "status_code": 200,
-      "bytes_fetched": 175727,
+      "bytes_fetched": 175729,
       "error": null,
-      "duration_sec": 0.23
+      "duration_sec": 0.22
     },
     {
       "name": "bp",
@@ -74,7 +74,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.37
+      "duration_sec": 0.36
     },
     {
       "name": "mfg",
@@ -87,7 +87,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.4
+      "duration_sec": 0.42
     },
     {
       "name": "morrisons",
@@ -100,7 +100,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -2] Name or service not known",
-      "duration_sec": 0.04
+      "duration_sec": 0.06
     },
     {
       "name": "sainsburys",
@@ -113,7 +113,7 @@
       "status_code": null,
       "bytes_fetched": 0,
       "error": "Network error: [Errno -3] Temporary failure in name resolution",
-      "duration_sec": 9.86
+      "duration_sec": 10.02
     },
     {
       "name": "shell",
@@ -126,7 +126,7 @@
       "status_code": 403,
       "bytes_fetched": 0,
       "error": "HTTP 403: Forbidden",
-      "duration_sec": 0.46
+      "duration_sec": 0.47
     },
     {
       "name": "tesco",
@@ -139,7 +139,7 @@
       "status_code": 200,
       "bytes_fetched": 119035,
       "error": null,
-      "duration_sec": 0.39
+      "duration_sec": 0.38
     }
   ],
   "rejected_price_count": 20,
